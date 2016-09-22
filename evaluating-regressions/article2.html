@@ -1,0 +1,870 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<title>Critically Evaluating Regression Analysis</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:9.0pt;
+	margin-right:0in;
+	margin-bottom:9.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+h1
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:18.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#345A8A;}
+h2
+	{margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#4F81BD;}
+h3
+	{margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#4F81BD;}
+h4
+	{margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#4F81BD;}
+h5
+	{margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#4F81BD;
+	font-weight:normal;
+	font-style:italic;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin-top:9.0pt;
+	margin-right:0in;
+	margin-bottom:9.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	text-align:center;
+	page-break-after:avoid;
+	font-size:18.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#345A8A;
+	font-weight:bold;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-top:9.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.MsoDate, li.MsoDate, div.MsoDate
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	text-align:center;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+p.Compact, li.Compact, div.Compact
+	{mso-style-name:Compact;
+	margin-top:1.8pt;
+	margin-right:0in;
+	margin-bottom:1.8pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.Authors, li.Authors, div.Authors
+	{mso-style-name:Authors;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	text-align:center;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.BlockQuote, li.BlockQuote, div.BlockQuote
+	{mso-style-name:"Block Quote";
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";}
+p.DefinitionTerm, li.DefinitionTerm, div.DefinitionTerm
+	{mso-style-name:"Definition Term";
+	margin-top:9.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";
+	font-weight:bold;}
+p.Definition, li.Definition, div.Definition
+	{mso-style-name:Definition;
+	margin-top:9.0pt;
+	margin-right:0in;
+	margin-bottom:9.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.TableCaption, li.TableCaption, div.TableCaption
+	{mso-style-name:"Table Caption";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";
+	font-style:italic;}
+p.ImageCaption, li.ImageCaption, div.ImageCaption
+	{mso-style-name:"Image Caption";
+	mso-style-link:"Body Text Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";
+	font-style:italic;}
+span.BodyTextChar
+	{mso-style-name:"Body Text Char";
+	mso-style-link:"Image Caption";}
+span.VerbatimChar
+	{mso-style-name:"Verbatim Char";
+	mso-style-link:"Source Code";
+	font-family:Consolas;}
+span.FootnoteRef
+	{mso-style-name:"Footnote Ref";
+	vertical-align:super;}
+span.Link
+	{mso-style-name:Link;
+	color:#4F81BD;}
+p.SourceCode, li.SourceCode, div.SourceCode
+	{mso-style-name:"Source Code";
+	mso-style-link:"Verbatim Char";
+	margin-top:9.0pt;
+	margin-right:0in;
+	margin-bottom:9.0pt;
+	margin-left:0in;
+	background:#F8F8F8;
+	word-break:break-all;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+span.KeywordTok
+	{mso-style-name:KeywordTok;
+	font-family:Consolas;
+	color:#204A87;
+	background:#F8F8F8;
+	font-weight:bold;}
+span.DataTypeTok
+	{mso-style-name:DataTypeTok;
+	font-family:Consolas;
+	color:#204A87;
+	background:#F8F8F8;}
+span.DecValTok
+	{mso-style-name:DecValTok;
+	font-family:Consolas;
+	color:#0000CF;
+	background:#F8F8F8;}
+span.BaseNTok
+	{mso-style-name:BaseNTok;
+	font-family:Consolas;
+	color:#0000CF;
+	background:#F8F8F8;}
+span.FloatTok
+	{mso-style-name:FloatTok;
+	font-family:Consolas;
+	color:#0000CF;
+	background:#F8F8F8;}
+span.CharTok
+	{mso-style-name:CharTok;
+	font-family:Consolas;
+	color:#4E9A06;
+	background:#F8F8F8;}
+span.StringTok
+	{mso-style-name:StringTok;
+	font-family:Consolas;
+	color:#4E9A06;
+	background:#F8F8F8;}
+span.CommentTok
+	{mso-style-name:CommentTok;
+	font-family:Consolas;
+	color:#8F5902;
+	background:#F8F8F8;
+	font-style:italic;}
+span.OtherTok
+	{mso-style-name:OtherTok;
+	font-family:Consolas;
+	color:#8F5902;
+	background:#F8F8F8;}
+span.AlertTok
+	{mso-style-name:AlertTok;
+	font-family:Consolas;
+	color:#EF2929;
+	background:#F8F8F8;}
+span.FunctionTok
+	{mso-style-name:FunctionTok;
+	font-family:Consolas;
+	color:black;
+	background:#F8F8F8;}
+span.RegionMarkerTok
+	{mso-style-name:RegionMarkerTok;
+	font-family:Consolas;
+	background:#F8F8F8;}
+span.ErrorTok
+	{mso-style-name:ErrorTok;
+	font-family:Consolas;
+	background:#F8F8F8;
+	font-weight:bold;}
+span.NormalTok
+	{mso-style-name:NormalTok;
+	font-family:Consolas;
+	background:#F8F8F8;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma","sans-serif";}
+.MsoChpDefault
+	{font-size:12.0pt;
+	font-family:"Cambria","serif";}
+.MsoPapDefault
+	{margin-bottom:10.0pt;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US>
+
+<div class=WordSection1>
+
+<p class=MsoTitle>Critically Evaluating Regression Analysis</p>
+
+<p class=MsoNormal>Regression analysis is a tool for analyzing the relationship
+between variables. Experts who construct parametric models through
+least-squares regression are reaching into a flexible and powerful toolkit
+which allows them to estimate relationships and forecast values while also
+directly stating potential rates of error.</p>
+
+<p class=MsoNormal>The construction of any model inevitably requires
+practitioners to make assumptions, and a model is only as reliable as the
+explicit and implicit assumptions it makes. Improperly applied regression
+analysis can yield sub-optimal or biased results.</p>
+
+<h1><a name=data-utilized>Data Utilized</a></h1>
+
+<p class=MsoNormal>For illustrative purposes, select data from the CDC's <a
+href="http://apps.nccd.cdc.gov/cdi/"><span class=Link><span style='text-decoration:
+none'>Chronic Disease Indicators database</span></span></a> was collected. Data
+has been filtered to the 50 states, the District of Columbia and Puerto Rico.
+All analysis and figures were created in <a href="http://www.r-project.org/"><span
+class=Link><span style='text-decoration:none'>R</span></span></a>, a popular
+open source statistics language. On <a
+href="http://www.lcsfirm.com/evaluating-regressions/"><span class=Link><span
+style='text-decoration:none'>our website</span></span></a>, you'll also find a
+digital copy of this article, prepared data and its source code.</p>
+
+<h2><a name=cdi-example>CDI Example</a></h2>
+
+<p class=MsoNormal>Suppose we wanted to predict the prevalence of adult obesity
+in a given state by measuring the percentage of adults who eat the recommended
+amount of fruits and vegetables. A simple mathematical relationship might be:</p>
+
+<p class=MsoNormal><span
+style='font-size:12.0pt;font-family:"Calibri","sans-serif"'><img width=232
+height=31 src="article2_files/image001.png"></span></p>
+
+<p class=MsoNormal>That is, the percentage of state <span style='font-size:12.0pt;font-family:"Calibri","sans-serif";position:relative;top:3.0pt'><img
+width=6 height=31 src="article2_files/image002.png"></span>'s population who
+will be overweight or obese is equal to <span
+style='font-size:12.0pt;font-family:"Calibri","sans-serif";position:relative;
+top:3.0pt'><img width=16 height=31 src="article2_files/image003.png"></span> plus
+<span
+style='font-size:12.0pt;font-family:"Calibri","sans-serif";position:relative;
+top:3.0pt'><img width=16 height=31 src="article2_files/image004.png"></span> times
+the percentage of state <span style='font-size:12.0pt;font-family:"Calibri","sans-serif";
+position:relative;top:3.0pt'><img width=6 height=31
+src="article2_files/image002.png"></span>'s population with sufficient
+nutrition plus an error term. In this model, <span
+style='font-size:12.0pt;font-family:"Calibri","sans-serif";position:relative;
+top:3.0pt'><img width=16 height=31 src="article2_files/image003.png"></span> and
+<span
+style='font-size:12.0pt;font-family:"Calibri","sans-serif";position:relative;
+top:3.0pt'><img width=16 height=31 src="article2_files/image004.png"></span> are
+the coefficients to be estimated. This is referred to as a simple regression
+because there is only one independent variable. A &quot;multiple
+regression&quot; will add additional independent variables multiplied by their
+respective <span style='font-size:12.0pt;font-family:"Calibri","sans-serif";
+position:relative;top:3.0pt'><img width=10 height=31
+src="article2_files/image005.png"></span>.</p>
+
+<p class=MsoNormal>When least-squares<a href="#_ftn1" name="_ftnref1" title=""><span
+class=FootnoteRef><span class=FootnoteRef><span style='font-size:12.0pt;
+font-family:"Cambria","serif"'>[1]</span></span></span></a> regression is used
+on the above formula, the following output is generated.</p>
+
+<p class=MsoNormal><b>Figure 1:</b> Simple Regression Output</p>
+
+<p class=SourceCode><span class=VerbatimChar><span style='font-size:11.0pt'>## </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Call:</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## lm(formula =
+overweightObese.adult ~ fruitVegConsumption.adult, </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##     data = data)</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Residuals:</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##     Min      1Q 
+Median      3Q     Max </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## -6.4223 -1.1879
+-0.0235  1.5730  4.6447 </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Coefficients:</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##                          
+Estimate Std. Error t value Pr(&gt;|t|)    </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## (Intercept)               76.61653   
+2.07943   36.84  &lt; 2e-16 ***</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##
+fruitVegConsumption.adult -0.55294    0.08904   -6.21 1.03e-07 ***</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## ---</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Signif. codes:  0
+'***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Residual standard
+error: 2.408 on 50 degrees of freedom</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Multiple R-squared: 
+0.4354, Adjusted R-squared:  0.4241 </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## F-statistic: 38.56
+on 1 and 50 DF,  p-value: 1.032e-07</span></span></p>
+
+<p class=MsoNormal>As you can see in Figure 1, <span
+style='font-size:12.0pt;font-family:"Calibri","sans-serif";position:relative;
+top:3.0pt'><img width=16 height=31 src="article2_files/image003.png"></span> and
+<span
+style='font-size:12.0pt;font-family:"Calibri","sans-serif";position:relative;
+top:3.0pt'><img width=16 height=31 src="article2_files/image004.png"></span> are
+estimated as 76.6 and -0.553, respectively. Substituting into the regression
+equation:</p>
+
+<p class=MsoNormal><span
+style='font-size:12.0pt;font-family:"Calibri","sans-serif"'><img width=261
+height=31 src="article2_files/image006.png"></span></p>
+
+<p class=MsoNormal>This means that in a state with no adults with proper fruit
+and vegetable consumption, we would expect to see 76.6% of the population
+overweight. With each additional percentage of the population with proper fruit
+and vegetable consumption, we would expect to see the percentage overweight
+decrease by 0.6%.</p>
+
+<p class=MsoNormal>However, these values for the <span
+style='font-size:12.0pt;font-family:"Calibri","sans-serif";position:relative;
+top:3.0pt'><img width=16 height=31 src="article2_files/image003.png"></span> and
+<span
+style='font-size:12.0pt;font-family:"Calibri","sans-serif";position:relative;
+top:3.0pt'><img width=16 height=31 src="article2_files/image004.png"></span> parameters
+are (hopefully unbiased) estimates. The remaining figures on each row quantify
+the amount of uncertainty in the distribution.</p>
+
+<p class=MsoNormal>The standard error provides the standard deviation of the
+sampling distribution. The t-value tells you the magnitude of the estimate
+relative to the standard error. It is equal to the estimate divided by the
+standard error.</p>
+
+<p class=MsoNormal>The final column of the coefficient rows, labeled
+Pr(&gt;|t|), is commonly reported as the &quot;p-value.&quot; If the true value
+of the coefficient were equal to zero, then the p-value tells us the
+probability of obtaining the observed result. If the p-value is close to zero,
+as it is in both of these cases, then we can reject the respective &quot;null
+hypotheses&quot; that both coefficients are not equal to zero.</p>
+
+<p class=MsoNormal>Because both p-values are smaller than 0.01, we can say that
+both coefficients are statistically significant at the 1% level.</p>
+
+<p class=MsoNormal>Figure 2 presents the result graphically. Each dot
+represents a single data point. The thick line represents the best-fit
+regression line. The vertical distance between each point and the regression
+line is known as the residual, the difference between the fitted and actual
+data point.</p>
+
+<p class=MsoNormal><b>Figure 2:</b> Simple Regression Scatterplot <img
+border=0 width=484 height=388 src="article2_files/image007.png"></p>
+
+<p class=MsoNormal>When evaluating a regression model, practitioners commonly
+focus on the <span
+style='font-size:12.0pt;font-family:"Calibri","sans-serif";position:relative;
+top:3.0pt'><img width=18 height=31 src="article2_files/image008.png"></span> figure
+-- an easily interpretable measure of goodness-of-fit. <span
+style='font-size:12.0pt;font-family:"Calibri","sans-serif";position:relative;
+top:3.0pt'><img width=18 height=31 src="article2_files/image008.png"></span> tells
+us the percentage of the dependent variable's variability which is explained by
+the model. In this example, our simple regression is able to explain 43.5% of
+the variation in adult obesity.</p>
+
+<p class=MsoNormal>This simple model is far from perfect. In fact, there are
+numerous errors we'll diagnose and fix in the next section.</p>
+
+<h1><a name=least-squares-regression-failure-modes>Least-Squares Regression
+Failure Modes</a></h1>
+
+<h2><a name=omitted-variable-bias>Omitted-Variable Bias</a></h2>
+
+<p class=MsoNormal>Our Simple Regression found that increasing the percentage
+of adults who eat the recommended quantity of fruits and vegetables by <span style='font-size:12.0pt;font-family:"Calibri","sans-serif";position:relative;top:3.0pt'><img
+width=9 height=31 src="article2_files/image009.png"></span> decreases the
+percentage of adults who are overweight or obese by <span style='font-size:12.0pt;font-family:"Calibri","sans-serif";position:relative;top:3.0pt'><img
+width=39 height=31 src="article2_files/image010.png"></span>. Without
+performing any analysis, a skilled practitioner will declare that this model
+overstates the benefits of fruit and vegetable consumption due to <b>omitted-variable
+bias</b>.</p>
+
+<p class=MsoNormal>Omitted-variable bias occurs when a statistically significant
+independent variable is omitted which is correlated with an included
+independent variable.</p>
+
+<p class=MsoNormal>This simple model does not take into account the percentage
+of adults who exercise regularly. Because there is a positive correlation
+between the number of adults who eat healthily and the number of adults who are
+physically active, the observed variable is allowed to noisily speak for both
+cases. Fruit and vegetable consumption is directly measuring the effect of a
+healthy diet and indirectly measuring the effect of exercise. If the two
+variables had a negative relationship, then the effect would travel in the
+other direction.</p>
+
+<p class=MsoNormal>Fortunately, our dataset also includes the percent of adults
+who exercise regularly. Figure 3, presents all three variables in a Correlation
+Matrix. The three bottom-left panels present scatterplots, like in Figure 2. To
+determine which variables are represented in each scatterplot, follow the names
+on the main diagonal. For instance, the bottom left scatterplot has nutrition
+on the x-axis and obesity on the y-axis (just like Figure 2).</p>
+
+<p class=MsoNormal>The three top-right present the correlation calculated
+between all combinations of variables. As we'd expect, there's a positive
+correlation between healthy eating and exercise and negative correlations
+between both measures and obesity.</p>
+
+<p class=MsoNormal><b>Figure 3:</b> Correlation Matrix <img border=0 width=484
+height=388 src="article2_files/image011.png"></p>
+
+<p class=MsoNormal>If we rerun our model to include both exercise and nutrition,
+the explained percentage of obesity increases and the percentage attributed to
+nutrition dramatically falls.</p>
+
+<p class=MsoNormal><b>Figure 4:</b> Multiple Regression Output</p>
+
+<p class=SourceCode><span class=VerbatimChar><span style='font-size:11.0pt'>## </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Call:</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## lm(formula =
+overweightObese.adult ~ fruitVegConsumption.adult + </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##     active.adults,
+data = data)</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Residuals:</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##     Min      1Q 
+Median      3Q     Max </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## -5.8629 -0.9288 
+0.2221  1.3944  4.2357 </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Coefficients:</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##                          
+Estimate Std. Error t value Pr(&gt;|t|)    </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##
+(Intercept)               81.85676    2.55291  32.064  &lt; 2e-16 ***</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##
+fruitVegConsumption.adult -0.36651    0.10169  -3.604 0.000732 ***</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##
+active.adults             -0.19137    0.06147  -3.113 0.003089 ** </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## ---</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Signif. codes:  0
+'***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Residual standard
+error: 2.223 on 49 degrees of freedom</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Multiple R-squared: 
+0.5286, Adjusted R-squared:  0.5094 </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## F-statistic: 27.48
+on 2 and 49 DF,  p-value: 9.931e-09</span></span></p>
+
+<p class=MsoNormal>The <span
+style='font-size:12.0pt;font-family:"Calibri","sans-serif";position:relative;
+top:3.0pt'><img width=18 height=31 src="article2_files/image008.png"></span> figure
+has increased from 43.5% to 52.9%. Coefficients and <span
+style='font-size:12.0pt;font-family:"Calibri","sans-serif";position:relative;
+top:3.0pt'><img width=18 height=31 src="article2_files/image008.png"></span> measures
+are compared in Figure 5.</p>
+
+<p class=MsoNormal><b>Figure 5:</b> Result Comparisons <img border=0 width=736
+height=120 src="article2_files/image012.png"></p>
+
+<p class=MsoNormal>Our original model isn't bad, per se. In some instances, we
+won't have access to important hidden variables. If what we really care about
+is the forecasted result, then visible variables should be permitted to
+&quot;speak for&quot; unobserved variables. However, in some cases, we care
+more about the coefficients than we do the forecasted result. For instance, if
+you were hired to quantify the benefit of increasing vegetable consumption,
+then ignoring fitness will drastically color your results due to
+omitted-variable bias.</p>
+
+<h2><a name=overfitting>Overfitting</a></h2>
+
+<p class=MsoNormal>Even this expanded model likely leaves out important
+factors. Obesity likely also depends on a state's age profile, racial
+breakdown, socio-economic status levels and numerous other factors. In an
+effort to avoid omitted-variable bias, and in the presence of big data, it is
+tempting to include as many variables as possible in the result.</p>
+
+<p class=MsoNormal>However, including too many independent variables leads to
+bad results due to <b>overfitting</b>. To illustrate, let's add another
+variable which likely has no effect on obesity: the percentage of adults who
+received a flu vaccine.</p>
+
+<p class=MsoNormal><b>Figure 6:</b> Overfitted Model Output</p>
+
+<p class=SourceCode><span class=VerbatimChar><span style='font-size:11.0pt'>## </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Call:</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## lm(formula =
+overweightObese.adult ~ fruitVegConsumption.adult + </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##     active.adults +
+fluVaccine.adult, data = data)</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Residuals:</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##     Min      1Q 
+Median      3Q     Max </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## -6.0559 -0.9581 
+0.1862  1.4530  4.3884 </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Coefficients:</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##                          
+Estimate Std. Error t value Pr(&gt;|t|)    </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## (Intercept)              
+81.23494    2.89046  28.105  &lt; 2e-16 ***</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##
+fruitVegConsumption.adult -0.35499    0.10537  -3.369  0.00150 ** </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##
+active.adults             -0.21358    0.07778  -2.746  0.00846 ** </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##
+fluVaccine.adult           0.02373    0.05024   0.472  0.63876    </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## ---</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Signif. codes:  0
+'***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Residual standard
+error: 2.24 on 48 degrees of freedom</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Multiple R-squared: 
+0.5308, Adjusted R-squared:  0.5015 </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## F-statistic:  18.1
+on 3 and 48 DF,  p-value: 5.385e-08</span></span></p>
+
+<p class=MsoNormal>With a p-value of 0.64, the flu-vaccine coefficient is
+statistically insignificant from zero. However, the <span
+style='font-size:12.0pt;font-family:"Calibri","sans-serif";position:relative;
+top:3.0pt'><img width=18 height=31 src="article2_files/image008.png"></span> value
+did increase from 52.9% to 53.1%, so the new variable had a measurable impact
+on the model.</p>
+
+<p class=MsoNormal><span
+style='font-size:12.0pt;font-family:"Calibri","sans-serif";position:relative;
+top:3.0pt'><img width=18 height=31 src="article2_files/image008.png"></span> is
+a nice metric because it is highly interpretable, but it would be a mistake to
+choose the model with the highest <span
+style='font-size:12.0pt;font-family:"Calibri","sans-serif";position:relative;
+top:3.0pt'><img width=18 height=31 src="article2_files/image008.png"></span>.
+At worst, a regression model will completely ignore a new independent variable.
+Therefore, <span
+style='font-size:12.0pt;font-family:"Calibri","sans-serif";position:relative;
+top:3.0pt'><img width=18 height=31 src="article2_files/image008.png"></span> will
+never decrease as models become more complicated, regardless of whether the new
+complications actually improve the model.</p>
+
+<p class=MsoNormal>Other metrics such as <span
+style='font-size:12.0pt;font-family:"Calibri","sans-serif";position:relative;
+top:3.0pt'><img width=62 height=31 src="article2_files/image013.png"></span>,
+Akaike information criterion (AIC) or the Bayesian information criterion (BIC)
+control for the complexity of the model, and it's more reasonable to choose a
+model based on the highest <span
+style='font-size:12.0pt;font-family:"Calibri","sans-serif";position:relative;
+top:3.0pt'><img width=62 height=31 src="article2_files/image013.png"></span> or
+the lowest AIC/BIC.</p>
+
+<p class=MsoNormal><span
+style='font-size:12.0pt;font-family:"Calibri","sans-serif";position:relative;
+top:3.0pt'><img width=18 height=31 src="article2_files/image008.png"></span> is
+just a measure of goodness-of-fit. It's nice when a model produces a good fit
+to the data on which it was trained, but the real challenge is in how well a
+model does when it is presented with new data.</p>
+
+<p class=MsoNormal>Another approach to model-selection is <b>cross validation</b>.
+One performs cross validation by segmenting the dataset into &quot;training
+data&quot; and &quot;test data.&quot; Parameters are estimated based only on
+the training data, and their predictions are judged on the testing data. This
+is an important test because overfit models underperform traditional models
+when they are tested out of sample.</p>
+
+<p class=MsoNormal>The most extreme form of cross-validation is leave-one-out
+cross validation (&quot;LOOCV&quot;). In LOOCV, one data point is deemed the
+test set and the rest is used for training. The process is repeated until all
+data points have had a turn as the test set. Figure 7 presents measures of
+LOOCV (lower is better), AIC, AICc (like AIC but corrected for smaller
+datasets), BIC and <span
+style='font-size:12.0pt;font-family:"Calibri","sans-serif";position:relative;
+top:3.0pt'><img width=62 height=31 src="article2_files/image013.png"></span>.
+In all measures, the Multiple Regression is the best model we've tried so far.</p>
+
+<p class=MsoNormal><b>Figure 7:</b> Measures of Fit <img border=0 width=897
+height=193 src="article2_files/image014.png"></p>
+
+<p class=MsoNormal>As shown in all measures of Figure 7, overfitting is a
+dangerous trap to fall into. Adding fitness decreased the CV measure by ~.45.
+Adding the flu vaccine to this increased the CV measure by 0.92, over twice as
+much. In regression analysis, simplicity and elegance are virtues. Sometimes,
+accuracy is achieved when there is nothing left to take away.</p>
+
+<h2><a name=sensitivity>Sensitivity</a></h2>
+
+<p class=MsoNormal>Turning our attention back to the scatterplots in Figure 3,
+a few data points jump out at us, especially the one with excessively low
+levels of exercise and relatively average weight. This observation corresponds
+to Puerto Rico. There are many reasons why Puerto Rico may be an outlier
+compared to the rest of the U.S. Depending on the nature of the analysis, it
+may be reasonable to exclude Puerto Rico as an outlier.</p>
+
+<p class=MsoNormal>Figure 8 presents a comparison of the Multiple Regression
+model after the dataset is limited to the 50 states (excluding Puerto Rico and
+Washington D.C.).</p>
+
+<p class=MsoNormal><b>Figure 8:</b> Limiting Data to 50 States <img border=0
+width=755 height=120 src="article2_files/image015.png"></p>
+
+<p class=MsoNormal>Remarkably, the fitness coefficient increases in impact from
+-0.19 to -0.28! As you can see, <b>least-squares regressions are very sensitive
+to outliers</b>. Excluding two regions in our analysis increased the estimated
+impact by almost 50%.</p>
+
+<p class=MsoNormal>A practitioner who utilizes least-squares regressions needs
+to ensure his dataset isn't plagued by outliers. There are alternatives to
+least-squares regressions which are more robust (ridge regressions and lasso
+regressions), but an analysis of them is beyond the scope of this paper.</p>
+
+<p class=MsoNormal>Although it doesn't affect this dataset, it is also worth
+noting that regressions will give unreliable results if independent variables
+are very highly correlated with each other. This problem, known as
+multicollinearity, will make the coefficient estimates very sensitive to tiny
+changes in the data.</p>
+
+<h2><a name=non-linear-effects>Non-Linear Effects</a></h2>
+
+<p class=MsoNormal>Least-squares regressions assume that there is a linear
+relationship between the dependent variable and independent variable(s). This
+means increasing independent variable <span
+style='font-size:12.0pt;font-family:"Calibri","sans-serif";position:relative;
+top:3.0pt'><img width=6 height=31 src="article2_files/image002.png"></span> by
+one unit will result in an expected increase of the dependent variable by <span
+style='font-size:12.0pt;font-family:"Calibri","sans-serif";position:relative;
+top:3.0pt'><img width=14 height=31 src="article2_files/image016.png"></span>,
+regardless of the current level of the independent or dependent variable.</p>
+
+<p class=MsoNormal>This may not be relevant in many situations. For instance,
+diminishing returns could decrease an effect as an independent variable
+increases or compound growth could generate non-linear responses in the
+dependent variable.</p>
+
+<p class=MsoNormal>To deal with challenges like these, practitioners often
+transform some of the variables. For instance, they may square an independent
+variable or take the natural log of the dependent variable.</p>
+
+<p class=MsoNormal>Figure 9 presents several common transformations to either
+the independent or dependent variables. For all transformed models, the slope
+directly depends on either the current y or x value as well as the fitted
+parameters.</p>
+
+<p class=MsoNormal><b>Figure 9:</b> Common Transformations <img border=0
+width=484 height=291 src="article2_files/image017.png"></p>
+
+<p class=MsoNormal>It is often helpful to plot independent and dependent
+variables in order to visually look for nonlinear patterns.</p>
+
+<p class=MsoNormal>One can also look for patterns in the residuals, the
+difference between the fitted and actual values. If the residuals look like
+random noise, then we have created a good model. If there is a pattern to the
+residuals, then there is information our model isn't taking into effect. Figure
+10 adds the 50-state residuals to the previous correlation matrix.</p>
+
+<p class=MsoNormal><b>Figure 10:</b> Correlation Matrix with Residuals <img
+border=0 width=484 height=388 src="article2_files/image018.png"></p>
+
+<p class=MsoNormal>As you'll notice, residuals are often higher than zero for
+average nutrition and are often lower than zero for high nutrition and low
+nutrition. This pattern is indicative of non-linear effects.</p>
+
+<p class=MsoNormal>Figure 11 displays goodness of fit statistics for nonlinear
+effects of nutrition. Nonlinear effects could potentially be added for exercise
+as well.</p>
+
+<p class=MsoNormal><b>Figure 11:</b> Measures of Fit <img border=0 width=484
+height=388 src="article2_files/image019.png"></p>
+
+<h2><a name=heteroskedasticity>Heteroskedasticity</a></h2>
+
+<p class=MsoNormal>Another thing you should notice from the correlation
+matrices is that the variance in obesity increases as either nutrition or
+exercise increase. Graphically, the scatterplots look like a bundle of flowers
+grasped tightly at their stems. This effect is demonstrated in simulated data
+Figure 12.</p>
+
+<p class=MsoNormal><b>Figure 12:</b> Heteroskedasticity vs Homoskedasticity <img
+border=0 width=484 height=388 id=Picture src="article2_files/image020.png"></p>
+
+<p class=MsoNormal>This is a common result when independent variables represent
+necessary but not sufficient conditions for the dependent variable to occur. If
+you don't exercise, then you're probably overweight. If you exercise, then you
+may or may not be overweight based on other factors. This results in a situation
+where the variance of the dependent variable changes as the independent
+variables change. In statistics, this is referred to as heteroskedasticity.</p>
+
+<p class=MsoNormal>Heteroskedasticity is also common in financial time series.
+Some financial returns move through sustained periods of high variance, such as
+equity and commodity markets in late 2008.</p>
+
+<p class=MsoNormal>You can perform ordinary least-squares regression in the
+presence of heteroskedasticity. However, many statistical tests assume
+homoskedasticity -- that variance is constant across all observations. In the
+presence of heteroskedasticity, the coefficient estimates will be reliable, but
+the standard error (and hence the t-stats and p-values) aren't reliable.</p>
+
+<p class=MsoNormal>Fortunately, there are versions of these tests which are
+robust to heteroskedasticity. In this case, the heteroskedasticity isn't a
+serious problem. In other cases, heteroskedasticity can be indicative of a
+misspecified model.</p>
+
+<p class=MsoNormal>Be careful when you observe heteroskedasticity, especially
+when you're performing your analysis in Excel and can't use robust statistical
+measures.</p>
+
+<h2><a name=time-series-regression-failure-modes>Time Series Regression Failure
+Modes</a></h2>
+
+<p class=MsoNormal>Often, regressions are used to analyze time series --
+variables which changes over time. Properly accounting for the timing of data
+points can produce useful forecasts, like the aforementioned case study, but
+time series analysis can introduce new ways for regressions to fail. These
+issues will be discussed in depth in a future article.</p>
+
+<h2><a name=further-extending-the-model>Further Extending the Model</a></h2>
+
+<p class=MsoNormal>Putting these steps together, we are left with the following
+model of the percentage of a state's population which is overweight or obese:</p>
+
+<p class=MsoNormal><span
+style='font-size:12.0pt;font-family:"Calibri","sans-serif"'><img width=335
+height=32 src="article2_files/image021.png"></span></p>
+
+<p class=MsoNormal>Subbing in beta estimates:</p>
+
+<p class=MsoNormal><span
+style='font-size:12.0pt;font-family:"Calibri","sans-serif"'><img width=395
+height=32 src="article2_files/image022.png"></span></p>
+
+<p class=MsoNormal>This is a good starting point, but it shouldn't be
+considered a finished analysis. Feel free to download this dataset and source
+code and attempt to take this analysis further. What happens when you add the
+cigarette usage? What does this tell you about what the other independent
+variables are measuring? What combinations of independent variables generate
+the lowest CV measure? Are any other data points potentially outliers? How
+would you model nonlinear effects in activity levels? These questions are left
+as an exercise to the reader.</p>
+
+</div>
+
+<div><br clear=all>
+
+<hr align=left size=1 width="33%">
+
+<div id=ftn1>
+
+<p class=MsoFootnoteText><a href="#_ftnref1" name="_ftn1" title=""><span
+class=FootnoteRef><span class=FootnoteRef><span style='font-size:12.0pt;
+font-family:"Cambria","serif"'>[1]</span></span></span></a>Least-squares
+regressions find the <span style='font-size:12.0pt;font-family:"Calibri","sans-serif";
+position:relative;top:3.0pt'><img width=10 height=31
+src="article2_files/image005.png"></span> parameter values which minimize the
+squared difference between actual and fitted values of the dependent variable. According
+to the Gauss-Markov Theorem, estimates produced in this fashion will have the
+smallest variance of all linear and unbiased estimators under certain
+assumptions. Many of the errors specified in this paper occur because the
+underlying assumptions do not hold.</p>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
