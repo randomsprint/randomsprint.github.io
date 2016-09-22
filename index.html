@@ -11762,95 +11762,17 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Python-Projects">Python Projects<a class="anchor-link" href="#Python-Projects">&#182;</a></h2><h3 id="Valuations-and-&quot;Beta-Lag&quot;">Valuations and "Beta Lag"<a class="anchor-link" href="#Valuations-and-&quot;Beta-Lag&quot;">&#182;</a></h3><p>Information/links here.</p>
-<h3 id="Analyzing-Technical-Indicators">Analyzing Technical Indicators<a class="anchor-link" href="#Analyzing-Technical-Indicators">&#182;</a></h3><p>Information/links here.</p>
-<h3 id="NFL-Correlation-Study">NFL Correlation Study<a class="anchor-link" href="#NFL-Correlation-Study">&#182;</a></h3><p>Information/links here.</p>
-<h2 id="R-Projects">R Projects<a class="anchor-link" href="#R-Projects">&#182;</a></h2><h3 id="Future-Lost-Wages-Calculator">Future Lost Wages Calculator<a class="anchor-link" href="#Future-Lost-Wages-Calculator">&#182;</a></h3><p>Information/links here.</p>
+<h2 id="Python-Projects">Python Projects<a class="anchor-link" href="#Python-Projects">&#182;</a></h2><h3 id="Valuations-and-&quot;Beta-Lag&quot;">Valuations and "Beta Lag"<a class="anchor-link" href="#Valuations-and-&quot;Beta-Lag&quot;">&#182;</a></h3><p>In this <a href="http://htmlpreview.github.io/?https://github.com/moody-marlin/wmcm/blob/master/ddm_tests/Beta_Lag_Effect.html">workbook</a>, I test one of the assumptions behind a widely used measure of industry risk in company valuations. I show that the assumption is not statistically rigorous in a way that likely biases company valuations in a downwards direction.</p>
+<p>The analysis is supported by the <a href="https://github.com/moody-marlin/wmcm">wmcm</a> package on github, which I developed with my friend <a href="https://github.com/moody-marlin">Chris White</a>.</p>
+<h3 id="NFL-Correlation-Study">NFL Correlation Study<a class="anchor-link" href="#NFL-Correlation-Study">&#182;</a></h3><p>When two teams play each other, you observe their relative strengths rather than their absolute strengths. If team A routs team B in a game expected to be tight, it could be that A is better than expected or it could be that B is worse than expected. The goal of this project is to create a Bayesian model of a league in <a href="https://pymc-devs.github.io/pymc/">pymc</a> and use the posterior samples to predict teams which will over or under-perform together. This information would obviously be very useful to sports gamblers.</p>
+<p>As a quick test of the idea, I applied the model seen in <a href="https://github.com/mdekauwe/bayesian-football">this repository</a>. The model is <a href="https://github.com/randomsprint/ddmnfl/blob/master/exploratory/bf_recreation_2_refactor.ipynb">specified here</a> and <a href="https://github.com/randomsprint/ddmnfl/blob/master/exploratory/analysis.ipynb">backtested here</a>. My predictions didn't perform well in a backtest. I need to either try a different sport or develop a better model, which would require a better data source.</p>
+<h3 id="Analyzing-Technical-Indicators">Analyzing Technical Indicators<a class="anchor-link" href="#Analyzing-Technical-Indicators">&#182;</a></h3><p>In this project, I attempted to test "Technical Analysis" which is used to test stock prices. The results are hosted on my old blog <a href="http://www.dcfnerds.com/analyzing-technical-analysis/">here</a>.</p>
+<p>This was my first python project. There is a lot I'd like to refactor.</p>
+<h2 id="R-Projects">R Projects<a class="anchor-link" href="#R-Projects">&#182;</a></h2><h3 id="Future-Lost-Wages-Calculator">Future Lost Wages Calculator<a class="anchor-link" href="#Future-Lost-Wages-Calculator">&#182;</a></h3><p>I created an RShiny app which allows users to estimate the value of lost wage claims. Here's a screenshot of it running. It is not currently hosted anywhere.</p>
 <h3 id="Critically-Evaluating-Regression-Analysis">Critically Evaluating Regression Analysis<a class="anchor-link" href="#Critically-Evaluating-Regression-Analysis">&#182;</a></h3><p>Information/links here.</p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Hello World
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's see what Jekyll does to the formatting.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">welcome_string</span> <span class="o">=</span> <span class="s1">&#39;Hello World&#39;</span>
-<span class="n">welcome_string</span> <span class="o">=</span> <span class="n">welcome_string</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">welcome_string</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">letter</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">welcome_string</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">idx</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">continue</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>HELLO WORLD
-E
-L
-L
-O
- 
-W
-O
-R
-L
-D
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     </div>
   </div>
