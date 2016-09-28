@@ -8456,15 +8456,15 @@ label {
 }
 /* Flexible box model classes */
 /* Taken from Alex Russell http://infrequently.org/2009/08/css-3-progress/ */
-/* This file is a compatability layer.  It allows the usage of flexible box
+/* This file is a compatability layer.  It allows the usage of flexible box 
 model layouts accross multiple browsers, including older browsers.  The newest,
 universal implementation of the flexible box model is used when available (see
-`Modern browsers` comments below).  Browsers that are known to implement this
+`Modern browsers` comments below).  Browsers that are known to implement this 
 new spec completely include:
 
     Firefox 28.0+
     Chrome 29.0+
-    Internet Explorer 11+
+    Internet Explorer 11+ 
     Opera 17.0+
 
 Browsers not listed, including Safari, are supported via the styling under the
@@ -11214,7 +11214,7 @@ div#pager .ui-resizable-handle {
   background: #f7f7f7;
   border-top: 1px solid #cfcfcf;
   border-bottom: 1px solid #cfcfcf;
-  /* This injects handle bars (a short, wide = symbol) for
+  /* This injects handle bars (a short, wide = symbol) for 
         the resize handle. */
 }
 div#pager .ui-resizable-handle::after {
@@ -11649,7 +11649,7 @@ ul.typeahead-list > li > a {
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
-
+    
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
 .ansi-black-fg { color: #3E424D; }
 .ansi-black-bg { background-color: #3E424D; }
@@ -11705,14 +11705,14 @@ div#notebook {
   div.cell {
     display: block;
     page-break-inside: avoid;
-  }
-  div.output_wrapper {
+  } 
+  div.output_wrapper { 
     display: block;
-    page-break-inside: avoid;
+    page-break-inside: avoid; 
   }
-  div.output {
+  div.output { 
     display: block;
-    page-break-inside: avoid;
+    page-break-inside: avoid; 
   }
 }
 </style>
@@ -11766,8 +11766,9 @@ div#notebook {
 <h2 id="Python-Projects">Python Projects<a class="anchor-link" href="#Python-Projects">&#182;</a></h2><h3 id="Valuations-and-&quot;Beta-Lag&quot;">Valuations and "Beta Lag"<a class="anchor-link" href="#Valuations-and-&quot;Beta-Lag&quot;">&#182;</a></h3><p>In this <a href="http://htmlpreview.github.io/?https://github.com/moody-marlin/wmcm/blob/master/ddm_tests/Beta_Lag_Effect.html">workbook</a>, I test one of the assumptions behind a widely used measure of industry risk in company valuations. I show that the assumption is not statistically rigorous in a way that likely biases company valuations in a downwards direction.</p>
 <p>The analysis is supported by the <a href="https://github.com/moody-marlin/wmcm">wmcm</a> package on github, which I developed with my friend <a href="https://github.com/moody-marlin">Chris White</a>.</p>
 <h3 id="Shrimp-Study">Shrimp Study<a class="anchor-link" href="#Shrimp-Study">&#182;</a></h3><p>I analyzed the <a href="http://www.gsmfc.org/seamap.php">GSMFC Seamap</a> database to look at changes in shrimp populations between various years. This was submitted to a federal court in relation to an economic damage claim.</p>
-<h3 id="NFL-Correlation-Study">NFL Correlation Study<a class="anchor-link" href="#NFL-Correlation-Study">&#182;</a></h3><p>When two teams play each other, you observe their relative strengths rather than their absolute strengths. If team A routs team B in a game expected to be tight, it could be that A is better than expected or it could be that B is worse than expected. The goal of this project is to create a Bayesian model of a league in <a href="https://pymc-devs.github.io/pymc/">pymc</a> and use the posterior samples to predict teams which will over or under-perform together. This information would obviously be very useful to sports gamblers.</p>
-<p>As a quick test of the idea, I applied the model seen in <a href="https://github.com/mdekauwe/bayesian-football">this repository</a>. The model is <a href="https://github.com/randomsprint/ddmnfl/blob/master/exploratory/bf_recreation_2_refactor.ipynb">specified here</a> and <a href="https://github.com/randomsprint/ddmnfl/blob/master/exploratory/analysis.ipynb">backtested here</a>. My predictions didn't perform well in a backtest. I need to either try a different sport or develop a better model, which would require a better data source.</p>
+<h3 id="NFL-Modeling-Exercise">NFL Modeling Exercise<a class="anchor-link" href="#NFL-Modeling-Exercise">&#182;</a></h3><p>The goal of <a href="https://github.com/randomsprint/ddmnfl">this project</a> is to create a Bayesian model of the NFL in <a href="https://pymc-devs.github.io/pymc/">pymc</a> and use the posterior samples to test some theories I have. I haven't completed a write-up yet.</p>
+<p>Currently relies on an old data source that only supplies final scores and ends at 2013. I'm going to create a better data source and then remodel with more data than just final scores.</p>
+<p>An old write-up of my NFL modeling written in rjags can be found <a href="http://www.dcfnerds.com/363/nfl-a-bayesian-model/">here</a>.</p>
 <h3 id="Analyzing-Technical-Indicators">Analyzing Technical Indicators<a class="anchor-link" href="#Analyzing-Technical-Indicators">&#182;</a></h3><p>In this project, I attempted to test "Technical Analysis" which is used to test stock prices. The results are hosted on my old blog <a href="http://www.dcfnerds.com/analyzing-technical-analysis/">here</a>.</p>
 <p>This was my first python project. There is a lot I'd like to refactor.</p>
 <h2 id="R-Projects">R Projects<a class="anchor-link" href="#R-Projects">&#182;</a></h2><h3 id="Future-Lost-Wages-Calculator">Future Lost Wages Calculator<a class="anchor-link" href="#Future-Lost-Wages-Calculator">&#182;</a></h3><p>I created an RShiny app which allows users to estimate the value of lost wage claims. <a href="http://randomsprint.com/images/futureLostWages2.PNG">Here's a screenshot</a> of it running. It's not currently hosted anywhere.</p>
