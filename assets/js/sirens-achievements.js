@@ -126,7 +126,7 @@ document.getElementById('twitterShareButton').addEventListener('click', function
   if (aTotal === 0) {
     commentary = encodeURIComponent('I am about to start the Siren\'s Symphony, a Choose Your Own Adventure Book set in the Odyssey. Let\'s see who can complete all achievements first!');
   } else {
-    commentary = encodeURIComponent('I have unlocked ' + aTotal + ' of 11 achievements in the Siren\'s Symphony! It\'s a  Choose Your Own Adventure Book set in the Odyssey.');
+    commentary = encodeURIComponent('I have unlocked ' + aTotal + ' of 11 achievements in the Siren\'s Symphony! It\'s a Choose Your Own Adventure Book set in the Odyssey.');
   }
   const intentUrl = `https://twitter.com/intent/tweet?url=${pageUrl}&text=${commentary}`;
   
