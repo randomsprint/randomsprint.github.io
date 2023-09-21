@@ -45,69 +45,69 @@ document.getElementById('_pushState').addEventListener('hy-push-state-load', fun
   var dPunc = document.getElementById('dPunc');
 
   if (a01) {
-    d01.textContent = '☑️';
+    d01.textContent = 'Victory?';
   } else {
-    d01.textContent = "⬜";
+    d01.textContent = "???";
   }
 
   if (a02) {
-    d02.textContent = '☑️';
+    d02.textContent = 'First Blood';
   } else {
-    d02.textContent = "⬜";
+    d02.textContent = "???";
   }
 
   if (a03) {
-    d03.textContent = '☑️';
+    d03.textContent = 'Burial at Sea';
   } else {
-    d03.textContent = "⬜";
+    d03.textContent = "???";
   }
 
   if (a04) {
-    d04.textContent = '☑️';
+    d04.textContent = 'Classic?';
   } else {
-    d04.textContent = "⬜";
+    d04.textContent = "???";
   }
 
   if (a05) {
-    d05.textContent = '☑️';
+    d05.textContent = 'Smells like Fish';
   } else {
-    d05.textContent = "⬜";
+    d05.textContent = "???";
   }
 
   if (a06) {
-    d06.textContent = '☑️';
+    d06.textContent = 'Storge';
   } else {
-    d06.textContent = "⬜";
+    d06.textContent = "???";
   }
 
   if (a07) {
-    d07.textContent = '☑️';
+    d07.textContent = 'Dead End?';
   } else {
-    d07.textContent = "⬜";
+    d07.textContent = "???";
   }
 
   if (a08) {
-    d08.textContent = '☑️';
+    d08.textContent = 'The Grim Reefer';
   } else {
-    d08.textContent = "⬜";
+    d08.textContent = "???";
   }
 
   if (a09) {
-    d09.textContent = '☑️';
+    d09.textContent = 'How did I get here?';
   } else {
-    d09.textContent = "⬜";
+    d09.textContent = "???";
   }
 
   if (a10) {
-    d10.textContent = '☑️';
+    d10.textContent = 'Diabolus Ex Machina';
   } else {
-    d10.textContent = "⬜";
+    d10.textContent = "???";
   }
 
   if (a11) {
-    d11.textContent = '☑️';
+    d11.textContent = 'Groundhog Day';
   } else {
-    d11.textContent = "⬜";
+    d11.textContent = "???";
   }
 
   dTotal.textContent = aTotal;
