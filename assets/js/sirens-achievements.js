@@ -122,7 +122,7 @@ document.getElementById('_pushState').addEventListener('hy-push-state-load', fun
 
 document.getElementById('twitterShareButton').addEventListener('click', function() {
   var aTotal = countTrueBooleans();
-  const pageUrl = encodeURIComponent('RandomSprint.com/sirens');
+  const pageUrl = encodeURIComponent('Chairsign.com/sirens');
   if (aTotal === 0) {
     commentary = encodeURIComponent('I am about to start the Siren\'s Symphony, a Choose Your Own Adventure Book set in the Odyssey. Let\'s see who can complete all achievements first!');
   } else {
